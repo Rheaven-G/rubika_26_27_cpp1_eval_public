@@ -120,22 +120,27 @@ myFile(.hpp), myFile(.cpp)  >  myFile(.i)   >  myFile(.o)  >  myFile(.exe)
 
 10. For each of the following scenarios, identify the most appropriate container and justify your choice.
 - You need to store the top ten scores in a game. The number of elements is known and will never change.
+
     array.
     You can change its values but the number of them will never change.
 
 - You need to manage a queue of tasks that must be executed in the order they arrive.
+
     vector as FIFO.
     The vector can pop its first element and collapse all others right to left.
 
 - You frequently need to insert and remove elements in the middle of a sequence.
+
     list.
     You can insert, move, add, replace, everything without having to move all your container.
 
 - You need to store a large number of elements and frequently check whether a particular element exists. The order of the elements does not matter.
+
     unordered_map.
     Finding is the absolute priority and order doesn't matter.
 
 - You need to keep track of actions so that the most recent action can be undone before earlier actions.
+
     vector or an array of pointers, as LIFO.
     It depends if you know at compile time that your max_Action_count will not move. 
     If it can grow, then use a vector with a reserve() and rereserve OCCASIONNALY in rare scenarios. But at least you are not locked with
@@ -143,10 +148,12 @@ myFile(.hpp), myFile(.cpp)  >  myFile(.i)   >  myFile(.o)  >  myFile(.exe)
     If it never changes and it will always be LIFO, array of pointer is good too.
 
 - You need to manage a collection of players whose number can change over time, with frequent read and traversal operations.
+
     vector.
     We need to iterate fast through them so the array behind the scene is good, but we also need to be able to change its nubmer over time.
 
 - You need to associate each student ID with a grade and retrieve a grade quickly using the student ID.
+
     (ordered) map.
     An ID is number-like. Either it's hexa, binary or a mix of `string-NN-divN` where N are numbers.
     First you can iterate through it quickly to make stats and treat data.
