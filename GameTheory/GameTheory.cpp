@@ -20,7 +20,7 @@ void PrintResult(const std::vector<Ranking>& ranking)
     for (const Ranking& player : ranking)
     {
         std::cout << std::left
-            << std::setw(20) << player.Name
+            << std::setw(20) << player.StrategyName
             << std::right
             << std::setw(12) << player.TotalPoint
             << std::setw(10) << player.Win
@@ -35,10 +35,11 @@ int main()
 {
     Tournament t;
 
-    t.PopulatePlayer();
+    t.PopulateStrategy();
 
     t.Simulate();
 
     PrintResult(t.GenerateFinalRankingByPoint());
+    std::cout << "\n\n";
     PrintResult(t.GenerateFinalRankingByWinDrawLoss());
 }
