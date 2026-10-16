@@ -72,7 +72,8 @@ myFile(.hpp), myFile(.cpp)  >  myFile(.i)   >  myFile(.o)  >  myFile(.exe)
 
 
 8. Briefly explain the diamond problem in multiple inheritance.
-    ```   A
+    ```   
+          A
          / \
         B1 B2
          \ /
